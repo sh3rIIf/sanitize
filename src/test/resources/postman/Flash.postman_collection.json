@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "289d0244-b8dc-4d0d-8bfc-ffad992b4c50",
+		"name": "Flash",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10979106"
+	},
+	"item": [
+		{
+			"name": "Sanitize",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sanitize/string?unsanitizedString=BEGIN this is a SELECT * FROM test BEGIN string CORRESPONDING",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sanitize",
+						"string"
+					],
+					"query": [
+						{
+							"key": "unsanitizedString",
+							"value": "BEGIN this is a SELECT * FROM test BEGIN string CORRESPONDING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sensitive word",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sanitize/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sanitize",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add sensitive word",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"word\": \"KLAP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sanitize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sanitize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove sensitive word",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sanitize/232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sanitize",
+						"232"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update sensitive word",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"word\": \"DOUBLETABLE1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sanitize/227",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sanitize",
+						"227"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
