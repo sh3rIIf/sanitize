@@ -1,3 +1,7 @@
+#### FIRST RUN - WHAT TO KNOW
+1. Use the docker-compose file in the docker directory to start up a MS SQL database
+2. App makes use of Flyway to initialise the database and insert the sensitive words
+
 #### PRODUCTION DEPLOYMENT
 1. Add docker build file to containerise the app
 2. Add docker-compose file to repo
@@ -22,6 +26,7 @@ The endpoint will provide the expected result but if we change BROWN to BROWNED 
 7. Add CI/CD scripts - for example when using Jenkins we can create pipeline scripts which can be maintained within the repo: CI, Build, Ship, Deploy
 8. Containerisation - A docker build file can be added and maintained within the repo
 9. Test containers - by using test containers we negate the need for hosting anything for integration testing eg database, redis caching, mq, etc
+10. Exception handling - return proper HTTP status codes for exceptions eg the word does not exist when doing a GET
 
 #### CODING
 The coding standard creates a predictable model that makes it easy to estimate development effort. New endpoint? Simple, we know we need a controller, request and response objects, a service layer and a repo layer if database integration is required. If data manipulation is required eg masking or encrypting values then we can just add a repo adaptor layer before the actual repo layer. Third party integration? Just add an adaptor layer that can be used by the service.  
